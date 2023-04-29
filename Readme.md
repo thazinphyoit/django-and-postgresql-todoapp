@@ -27,12 +27,12 @@ local computer (Add Project to Git Repository)
 5. git status 
 6. git commit -m "first commit"
 7. git branch -M main
-8. git remote add origin https://github.com/thazinphyoit/test-repo.git
+8. git remote add origin https://github.com/thazinphyoit/django-and-postgresql-todoapp.git
     *** notice -> https://github.com/<GITHUB_USERNAME>/<REPOSITORY_NAME>.git 
 9. git push -u origin main
     (or)
-   git push https://thazinphyoit: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@github.com/thazinphyoit/test-repo.git 
-    *** notice https://<GITHUB_USERNAME>:<Personal Access Token>@github.com/thazinphyoit/test-repo.git 
+   git push https://thazinphyoit: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@github.com/thazinphyoit/django-and-postgresql-todoapp.git 
+    *** notice https://<GITHUB_USERNAME>:<Personal Access Token>@github.com/thazinphyoit/django-and-postgresql-todoapp.git 
 
 
 
@@ -41,4 +41,4 @@ GIT CLONE (DOWNLOAD)
 
 local computer (Download Project from Git Repository)
 --------------
-1. git clone https://github.com/thazinphyoit/test-repo.git
+1. git clone https://github.com/thazinphyoit/django-and-postgresql-todoapp.git

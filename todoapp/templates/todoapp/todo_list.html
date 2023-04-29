@@ -22,14 +22,30 @@
                         </h1>
                     </div>
                     <div class="card-body">
-                        <form action="insert/" method="POST" autocomplete="off">
-                            <div class="input-group">
-                                <input type="text" class="form-control">
-                                <div class="input-group-text py-0 bg-white">
-                                    <button type="submit" class="btn btn-md text-info"><i class="fas fa-sticky-note"></i></button>
-                                </div>
-                            </div>
-                        </form>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <form action="{% url 'insert_todo' %}" method="POST" autocomplete="off">
+                                    {% csrf_token %}
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="content">
+                                        <div class="input-group-text py-0 bg-white">
+                                            <button type="submit" class="btn btn-md text-info"><i class="fas fa-sticky-note"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </li>
+                            {% for todo in todo_list %}
+                            <li class="list-group-item">
+                                {{todo.content}}
+                                <form action="{% url 'delete_todo' todo.id %}" method="POST" class="d-inline float-right">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-md text-danger"><i class="fas fa-trash-alt"></i></button>
+                                </form>
+                            </li>
+                            {% empty %}
+                            <li class="list-group-item">No todo item!</li>
+                            {% endfor %}
+                        </ul>
                     </div>
                 </div>
             </div>
